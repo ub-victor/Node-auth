@@ -1,22 +1,25 @@
 {
-  "dependencies": {
-    "@prisma/client": "^7.10.0",
-    "bcryptjs": "^3.0.3",
-    "cors": "^2.8.6",
-    "dotenv": "^18.0.0",
-    "express": "^5.2.1",
-    "express-rate-limit": "^8.7.0",
-    "helmet": "^8.3.0",
-    "jsonwebtoken": "^9.0.3",
-    "zod": "^4.6.5"
+  "name": "node-auth",
+  "version": "1.0.0",
+  "description": "Employee Management System API",
+  "main": "dist/server.js",
+  "scripts": {
+    "dev": "tsx watch src/server.ts",
+    "build": "tsc",
+    "start": "node dist/server.js",
+    "lint": "eslint src --ext .ts",
+    "lint:fix": "eslint src --ext .ts --fix",
+    "format": "prettier --write \"src/**/*.ts\"",
+    "prisma:generate": "prisma generate",
+    "prisma:migrate": "prisma migrate dev",
+    "prisma:studio": "prisma studio",
+    "prisma:seed": "tsx prisma/seed.ts",
+    "postinstall": "prisma generate"
   },
-  "devDependencies": {
-    "@types/cors": "^2.8.19",
-    "@types/express": "^5.0.6",
-    "@types/jsonwebtoken": "^9.0.10",
-    "@types/node": "^26.6.1",
-    "prisma": "^7.10.0",
-    "tsx": "^4.23.13",
-    "typescript": "^7.0.2"
-  }
+  "prisma": {
+    "seed": "tsx prisma/seed.ts"
+  },
+  "keywords": ["node", "express", "typescript", "prisma", "postgresql", "jwt", "rbac"],
+  "author": "",
+  "license": "ISC"
 }
